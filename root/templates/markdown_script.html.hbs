@@ -1,0 +1,17 @@
+<div id="content"></div>
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"></script>
+<script>
+ fetch(markdown_url)
+     .then(response => response.text())
+     .then(text => {
+         showdown.setFlavor('github');
+         showdown.setOption('metadata', true);
+         showdown.setOption('simpleLineBreaks', false);
+         var converter = new showdown.Converter({
+             extensions: []
+         });
+         html = converter.makeHtml(text);
+         document.getElementById('content').innerHTML = html;
+     });
+</script>
+

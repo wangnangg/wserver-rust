@@ -1,0 +1,15 @@
+[package]
+name = "wserver"
+version = "0.1.0"
+authors = ["Nan Wang <wangnangg@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rocket="0.4"
+lazy_static="1"
+regex="1"
+
+[dependencies.rocket_contrib]
+version = "0.4"
+default-features = false
+features = ["handlebars_templates", "serve"]
